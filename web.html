@@ -1,0 +1,102 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>EasyShop - Online Shopping</title>
+<style>
+body{font-family:Arial;margin:0;background:#f2f2f2}
+header{background:#2874f0;color:white;padding:20px;text-align:center}
+nav{background:#222;padding:12px;text-align:center}
+nav a{color:white;margin:15px;text-decoration:none}
+h2{text-align:center;color:#2874f0}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:20px}
+.card{background:white;padding:15px;text-align:center;border-radius:10px;box-shadow:0 2px 5px #aaa}
+.card button{background:#2874f0;color:white;padding:10px;border:0;cursor:pointer;border-radius:5px}
+.price{color:green;font-weight:bold}
+#cart{text-align:center;background:white;padding:15px;margin:20px}
+@media(max-width:600px){.products{grid-template-columns:1fr}nav a{margin:5px}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>EasyShop 🛍️</h1>
+<p>Your One-Stop Online Shopping Store</p>
+</header>
+
+<nav>
+<a href="#fashion">Fashion</a>
+<a href="#sports">Sports</a>
+<a href="#stationery">Stationery</a>
+<a href="#gifts">Gifts</a>
+<a href="#snacks">Snacks</a>
+</nav>
+
+<div id="cart">
+<h2>🛒 Shopping Cart</h2>
+<p id="items">Items: 0</p>
+<p id="total">Total: ₹0</p>
+<button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<h2 id="fashion">👕 Fashion</h2>
+<div class="products">
+<div class="card"><h3>T-Shirt</h3><p>Comfortable cotton T-shirt</p><p class="price">₹499</p><button onclick="add('T-Shirt',499)">Add to Cart</button></div>
+<div class="card"><h3>Jeans</h3><p>Stylish blue jeans</p><p class="price">₹999</p><button onclick="add('Jeans',999)">Add to Cart</button></div>
+<div class="card"><h3>Shoes</h3><p>Casual everyday shoes</p><p class="price">₹799</p><button onclick="add('Shoes',799)">Add to Cart</button></div>
+</div>
+
+<h2 id="sports">⚽ Sports</h2>
+<div class="products">
+<div class="card"><h3>Football</h3><p>Sports football</p><p class="price">₹599</p><button onclick="add('Football',599)">Add to Cart</button></div>
+<div class="card"><h3>Cricket Bat</h3><p>Lightweight cricket bat</p><p class="price">₹899</p><button onclick="add('Cricket Bat',899)">Add to Cart</button></div>
+<div class="card"><h3>Badminton</h3><p>Badminton racket</p><p class="price">₹399</p><button onclick="add('Badminton',399)">Add to Cart</button></div>
+</div>
+
+<h2 id="stationery">📚 Stationery</h2>
+<div class="products">
+<div class="card"><h3>Notebook</h3><p>200-page notebook</p><p class="price">₹80</p><button onclick="add('Notebook',80)">Add to Cart</button></div>
+<div class="card"><h3>Pen Set</h3><p>Pack of 5 pens</p><p class="price">₹60</p><button onclick="add('Pen Set',60)">Add to Cart</button></div>
+<div class="card"><h3>School Bag</h3><p>Everyday backpack</p><p class="price">₹599</p><button onclick="add('School Bag',599)">Add to Cart</button></div>
+</div>
+
+<h2 id="gifts">🎁 Gifts</h2>
+<div class="products">
+<div class="card"><h3>Teddy Bear</h3><p>Soft teddy bear</p><p class="price">₹399</p><button onclick="add('Teddy Bear',399)">Add to Cart</button></div>
+<div class="card"><h3>Greeting Card</h3><p>Beautiful greeting card</p><p class="price">₹50</p><button onclick="add('Greeting Card',50)">Add to Cart</button></div>
+<div class="card"><h3>Photo Frame</h3><p>Decorative photo frame</p><p class="price">₹249</p><button onclick="add('Photo Frame',249)">Add to Cart</button></div>
+</div>
+
+<h2 id="snacks">🍿 Snacks</h2>
+<div class="products">
+<div class="card"><h3>Chips</h3><p>Crispy potato chips</p><p class="price">₹30</p><button onclick="add('Chips',30)">Add to Cart</button></div>
+<div class="card"><h3>Biscuits</h3><p>Tasty biscuit pack</p><p class="price">₹40</p><button onclick="add('Biscuits',40)">Add to Cart</button></div>
+<div class="card"><h3>Chocolate</h3><p>Sweet milk chocolate</p><p class="price">₹100</p><button onclick="add('Chocolate',100)">Add to Cart</button></div>
+</div>
+
+<script>
+let count=0,total=0;
+
+function add(name,price){
+count++;
+total+=price;
+document.getElementById("items").innerText="Items: "+count;
+document.getElementById("total").innerText="Total: ₹"+total;
+alert(name+" added to cart!");
+}
+
+function clearCart(){
+count=0;
+total=0;
+document.getElementById("items").innerText="Items: 0";
+document.getElementById("total").innerText="Total: ₹0";
+}
+</script>
+
+<footer style="background:#222;color:white;text-align:center;padding:15px">
+<p>© 2026 EasyShop | Happy Shopping!</p>
+</footer>
+
+</body>
+</html>
+```
